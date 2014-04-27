@@ -1,0 +1,26 @@
+{
+  "name": "NBC Sports Scoreboard Blocker",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Blocks the scoreboard for NBC sports streaming page",
+  "homepage_url": "http://isurfsoftware.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "http://stream.nbcsports.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://stream.nbcsports.com/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
