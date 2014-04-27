@@ -1,16 +1,13 @@
 chrome.extension.sendMessage({}, function(response) {
-	var readyStateCheckInterval = setInterval(function() {
-	if (document.readyState === "complete") {
-		clearInterval(readyStateCheckInterval);
-
-    console.log("Removing Scoreboard");
+  var scoreboardApperanceCheckInterval = setInterval(function() {
+    console.log("checking for scoreboard");
     var elements = document.getElementsByClassName("scoreboard");
 
     if(elements.length > 0) {
+      clearInterval(scoreboardApperanceCheckInterval);
       var scoreboard = elements[0];
       scoreboard.remove();
     }
 
-	}
-	}, 10);
+  }, 10);
 });
